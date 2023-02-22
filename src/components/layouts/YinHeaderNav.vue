@@ -35,7 +35,7 @@ li {
   margin: $header-nav-margin;
   padding: $header-nav-padding;
   line-height: 3.3rem;
-  color: $color-grey;
+  color: white;
   border-bottom: none;
   cursor: pointer;
 }

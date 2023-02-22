@@ -1,5 +1,5 @@
 <template>
-  <yin-login-logo></yin-login-logo>
+<!--  <yin-login-logo></yin-login-logo>-->
   <div class="sign">
     <div class="sign-head">
       <span>用户注册</span>
@@ -53,7 +53,7 @@ import { AREA, RouterName, NavName, SignUpRules } from "@/enums";
 
 export default defineComponent({
   components: {
-    YinLoginLogo,
+    // YinLoginLogo,
   },
   setup() {
     const { proxy } = getCurrentInstance();
@@ -102,11 +102,16 @@ export default defineComponent({
       }
     }
 
+    const goBack=()=>{
+      routerManager(RouterName.SignIn, { path: RouterName.SignIn });
+    }
+
     return {
       SignUpRules,
       AREA,
       registerForm,
       handleSignUp,
+      goBack
     };
   },
 });

@@ -1,5 +1,5 @@
 <template>
-  <yin-login-logo></yin-login-logo>
+<!--  <yin-login-logo></yin-login-logo>-->
   <div class="sign">
     <div class="sign-head">
       <span>帐号登录</span>
@@ -28,7 +28,7 @@ import { NavName, RouterName, SignInRules } from "@/enums";
 
 export default defineComponent({
   components: {
-    YinLoginLogo,
+    // YinLoginLogo,
   },
   setup() {
     const { proxy } = getCurrentInstance();

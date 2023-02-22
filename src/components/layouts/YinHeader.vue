@@ -2,7 +2,7 @@
   <div class="yin-header">
     <!--图标-->
     <div class="header-logo" @click="goPage()">
-      <yin-icon :icon="iconList.ERJI"></yin-icon>
+<!--      <yin-icon :icon="iconList.ERJI"></yin-icon>-->
       <span>{{ musicName }}</span>
     </div>
     <yin-header-nav class="yin-header-nav" :styleList="headerNavList" :activeName="activeNavName" @click="goPage"></yin-header-nav>
@@ -35,7 +35,7 @@ import { HttpManager } from "@/api";
 
 export default defineComponent({
   components: {
-    YinIcon,
+    // YinIcon,
     YinHeaderNav,
   },
   setup() {
@@ -130,12 +130,13 @@ export default defineComponent({
 
 .yin-header {
   position: fixed;
+  background: #EC4141;
   width: 100%;
   height: $header-height;
   line-height: $header-height;
   padding: $header-padding;
   margin: $header-margin;
-  background-color: $theme-header-color;
+  //background-color: $theme-header-color;
   box-shadow: $box-shadow;
   box-sizing: border-box;
   z-index: 100;

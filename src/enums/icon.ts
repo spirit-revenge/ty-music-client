@@ -6,7 +6,7 @@ export const enum Icon {
   ERJI = "#icon-erji", // 耳机
   SOUSUO = "#icon-sousuo", // 搜索
   XIAZAI = "#icon-xiazai", // 下载
-  ZHEDIE = "#icon-jiantou-xia-cuxiantiao", // 折叠
+  ZHEDIE = "#icon-jiantou-shang-cuxiantiao", // 折叠
   SHANGYISHOU = "#icon-ziyuanldpi", // 上一首
   XIAYISHOU = "#icon-ziyuanldpi1", // 下一首
   JINGYIN = "#icon-yinliangjingyinheix", // 静音
