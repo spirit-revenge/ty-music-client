@@ -1,7 +1,8 @@
 <template>
   <div class="personal">
     <div class="personal-info">
-      <el-avatar class="personal-img" fit="contain" :src="attachImageUrl(userPic)" @click="dialogTableVisible = true" />
+      <el-avatar class="personal-img" fit="contain" v-if="userPic" :src="attachImageUrl(userPic)" @click="dialogTableVisible = true" />
+      <el-avatar class="personal-img" fit="contain" v-if="!userPic" @click="dialogTableVisible = true">{{username.substring(0,1).toUpperCase()}}</el-avatar>
       <div class="personal-msg">
         <div class="username">{{ personalInfo.username }}</div>
         <div class="introduction">{{ personalInfo.introduction }}</div>
@@ -48,6 +49,7 @@ export default defineComponent({
     });
     const userId = computed(() => store.getters.userId);
     const userPic = computed(() => store.getters.userPic);
+    const username = computed(()=>store.getters.username)
     watch(userPic, () => {
       dialogTableVisible.value = false;
     });
@@ -92,6 +94,7 @@ export default defineComponent({
     return {
       Edit,
       userPic,
+      username,
       dialogTableVisible,
       collectSongList,
       personalInfo,
@@ -131,6 +134,7 @@ export default defineComponent({
     top: -180px;
     left: 50px;
     cursor: pointer;
+    font-size: 120px;
   }
   .personal-msg {
     margin-left: 300px;

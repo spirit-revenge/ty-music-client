@@ -13,7 +13,8 @@
     <!--设置-->
     <yin-header-nav v-if="!token" :styleList="signList" :activeName="activeNavName" @click="goPage"></yin-header-nav>
     <el-dropdown class="user-wrap" v-if="token" trigger="click">
-      <el-image class="user" fit="contain" :src="attachImageUrl(userPic)" />
+      <el-avatar class="user" fit="contain" :src="attachImageUrl(userPic)" v-if="userPic" />
+      <el-avatar class="user" fit="contain" v-if="!userPic">{{username.substring(0,1).toUpperCase()}}</el-avatar>
       <template #dropdown>
         <el-dropdown-menu>
           <el-dropdown-item v-for="(item, index) in menuList" :key="index" @click.stop="goMenuList(item.path)">{{ item.name }}</el-dropdown-item>
@@ -53,6 +54,7 @@ export default defineComponent({
     const keywords = ref("");
     const activeNavName = computed(() => store.getters.activeNavName);
     const userPic = computed(() => store.getters.userPic);
+    const username=computed(()=>store.getters.username)
     const token = computed(() => store.getters.token);
 
     function goPage(path, name) {
@@ -95,6 +97,7 @@ export default defineComponent({
       keywords,
       activeNavName,
       userPic,
+      username,
       token,
       Search,
       goPage,
@@ -190,6 +193,8 @@ export default defineComponent({
     border-radius: $header-user-radius;
     margin-right: $header-user-margin;
     cursor: pointer;
+    background-color: white;
+    color: #000000;
   }
 }
 </style>

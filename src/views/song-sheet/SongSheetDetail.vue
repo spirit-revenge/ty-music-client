@@ -8,17 +8,17 @@
       <h1>简介</h1>
       <p>{{ songDetails.introduction }}</p>
       <!--评分-->
-      <div class="album-score">
-        <div>
-          <h3>歌单评分</h3>
-          <el-rate v-model="rank" allow-half disabled></el-rate>
-        </div>
-        <span>{{ rank * 2 }}</span>
-        <div>
-          <h3>{{ assistText }} {{ score * 2 }}</h3>
-          <el-rate allow-half v-model="score" :disabled="disabledRank" @click="pushValue()"></el-rate>
-        </div>
-      </div>
+<!--      <div class="album-score">-->
+<!--        <div>-->
+<!--          <h3>歌单评分</h3>-->
+<!--          <el-rate v-model="rank" allow-half disabled></el-rate>-->
+<!--        </div>-->
+<!--        <span>{{ rank * 2 }}</span>-->
+<!--        <div>-->
+<!--          <h3>{{ assistText }} {{ score * 2 }}</h3>-->
+<!--          <el-rate allow-half v-model="score" :disabled="disabledRank" @click="pushValue()"></el-rate>-->
+<!--        </div>-->
+<!--      </div>-->
       <!--歌曲-->
       <song-list class="album-body" :songList="currentSongList"></song-list>
       <comment :playId="songListId" :type="1"></comment>
